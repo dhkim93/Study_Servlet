@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+	<display-name>Servlet_Filter</display-name>
+	<filter><!-- 필터절은 항상 servlet절 위에 나와야 된다!!! -->
+		<filter-name>MyFilter01</filter-name>
+		<filter-class>Servlet_Filter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>MyFilter01</filter-name>
+		<url-pattern>ServletTest01</url-pattern><!-- 필터가 적용될 서블릿의 utlpatten ~과 동일해야된다! *로하면 모든 url에 해당적용 -->
+	</filter-mapping>
+	
+	<servlet>
+		<servlet-name>My01</servlet-name>
+		<servlet-class>ServletTest01</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>My01</servlet-name>
+		<url-pattern>/Servlet01</url-pattern>
+	</servlet-mapping>
+
+
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>
