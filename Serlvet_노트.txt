@@ -1,0 +1,100 @@
+servlet = jsp가 실행될때 번역된 클래스
+
+404 
+500 코드에러
+
+*Servlet 생명주기
+init() -> service() -> destroy()
+
+service()는 모든 메서드에 대응
+
+
+*service()의 자손들
+main
+Post => doPost
+Get -> doGet
+Delete 
+Put
+Options
+ 
+
+<servlet-class> Java클래스명(package명)
+<url-pattern>/실행명(과 <form action=""절과 같아야댐)
+
+http://localhost:8282/ServletTest02/Servlet01?id=asdf&pass=1234&name=박수민
+
+오전 9:38 2017-08-31
+이동(redirect) -> 자료를 유지하지않고 이동(하이퍼링크클릭시)
+전달(forward) => 자료를 유지하며 이동(주소창의 주소가 변하지않는다)
+
+** http프로토콜로 요청하는건 문자열만 처리가능!
+
+저장영역(★★ 정보전송에 제약이 줄어든다)(객체도 처리가 가능)
+1. 페이지영역(1페이지에서밖에 정보가 유효하지않다)
+2. request영역(request발생한 다음페이지까지만 유효함)
+3. session(brawser를 종류하기 전까지 정보 공유, 서버에 만들어짐)
+4. servletContext = application 영역(Server에 접근하는 모든 client가 공유하는 영역, 사용안함, 시스템 설정만)
+
+
+setAttribute("저장될 이름(문자열)", 저장시킬객체)
+, getAttribute(), removeAttribute()
+
+* cookie(자동로그인, 팝업창)
+	문자열
+	client pc에 생성되는 문자열
+
+HttpSession session = req.getSession();//기존 새션 활용!
+HttpSession session = req.getSession(true);//새션이 없다면 새로 생성하라!
+
+오전 9:40 2017-09-04
+파일 시스템
+
+ServletContext -> getRealPath("/image"); 경로지정!
+
+<form name= .. method=.. >
+text type이 아닌 다른 type일 경우 "enctype=multipart/formdata"로 지정해줘야 됨
+
+enctype 지정할경우 무조건 form 의 method는 post!!'
+
+
+오전 11:07 2017-09-05
+DBMS
+1.JDBC 형식(사용X)
+	
+driver, connection , url,id,pw 쿼리전송
+
+2. DBCP(dataBaseConnectionPool) 서버 부하가 덜걸림(실무에서 사용!)
+
+** DB connect(환경정보)
+1. java class에 기술(변경될때마다 컴파일 필요)
+2. xml에 기술(태그형태로 기술)			<servlet-name>My01</>
+3. properties file에 기술(text 형태로 기술, 가독성) servlet=name=My01
+
+JNDI(JavaNaming&DirectoryInterface)
+
+오전 9:54 2017-09-06
+
+maxWait="10000" => 대기시간 10초 (-1주면 무한대기)
+
+removeAandoned="true" 잘못된 자원 사용할것인가?(yes -> 다른곳에서재활용해서 사용)
+removeAbandoneTimeout="60" 어떤 컨넥션을 잘못된 자원으로 인식할것인가(60초 대기)
+
+
+오전 11:38 2017-09-11
+
+MIME(Multipurpose Internet Mail Extention) => text/html;charset=utf-8
+
+오전 11:01 2017-09-13
+
+filter Class
+1. 인코딩 할때
+2. Session 영역의 인증(로그인했을시 작업)
+3. event나 공지에 따른 팝업 생성
+
+특정한 정보의 유무, 특정정보를 거를 때,  값을 변경할때 Filter를 사용
+
+
+
+
+
+
