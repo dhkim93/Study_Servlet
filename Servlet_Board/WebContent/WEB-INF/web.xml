@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>Servlet_Board</display-name>
+  
+  <servlet>
+    <servlet-name>My01</servlet-name>
+    <servlet-class>Board</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>My02</servlet-name>
+    <servlet-class>MainPage</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>My03</servlet-name>
+    <servlet-class>SuccessServlet</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>My04</servlet-name>
+    <servlet-class>JoinPage</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>My01</servlet-name>
+    <url-pattern>/Servlet02</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>My02</servlet-name>
+    <url-pattern>/Main</url-pattern>
+  </servlet-mapping>
+  
+   <servlet-mapping>
+    <servlet-name>My03</servlet-name>
+    <url-pattern>/Success</url-pattern>
+  </servlet-mapping>
+  
+   <servlet-mapping>
+    <servlet-name>My04</servlet-name>
+    <url-pattern>/Join</url-pattern>
+  </servlet-mapping>
+  
+   <resource-ref>
+    <description>MySql Connection</description>
+    <res-ref-name>jdbc/myconn</res-ref-name>
+    <res-type>javax.sql.DataSource</res-type>
+    <res-auth>Container</res-auth>
+  </resource-ref>
+  
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
